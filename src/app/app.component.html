@@ -1,0 +1,10 @@
+<!-- Header component for general users or guests.-->
+<app-app-header *ngIf="!isLoggedIn && !isAdminLoggedIn"> </app-app-header> 
+
+<!-- Header component for logged-in users who are not admins -->
+<app-user-header *ngIf="isLoggedIn && !isAdminLoggedIn"> </app-user-header>
+
+<!-- Header component for users who are admins but not logged in-->
+<app-admin-header *ngIf="!isLoggedIn && isAdminLoggedIn"> </app-admin-header>
+ <router-outlet> </router-outlet> 
+ <app-footer> </app-footer>

@@ -1,0 +1,11 @@
+    <header class="header">
+        <a class="logo"><i ></i>🍔FOODEXPRESS</a>
+        <nav class="nav-items">
+          <i class="fa fa-home"></i><a (click)="gotourl('/admin/home')" [class.selected]="url === '/admin/home'">Home</a>
+          <i class="fa fa-plus-circle"></i><a (click)="gotourl('/admin/additem')" [class.selected]="url === '/admin/addbook'">Add-Item</a>
+          <i class="fa fa-list-ul"></i><a (click)="gotourl('/admin/itemlist')" [class.selected]="url === '/admin/itemlist'">Item-List</a>
+          <i class="fa fa-list-alt"></i><a (click)="gotourl('/admin/order-list')" [class.selected]="url === '/admin/order-list'">Order-List</a>
+          <i class="fa fa-sign-out"></i><a (click)="gotourl('/admin/logout')" [class.selected]="url === '/admin/logout'">Logout</a> 
+        </nav>
+      </header>
+

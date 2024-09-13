@@ -1,0 +1,54 @@
+<br /><br />
+<div class="centered">
+    <mat-button-toggle-group [value]="searchType" (change)="getSelectedType($event)">
+        <mat-button-toggle value="bycategory">Category</mat-button-toggle>
+        <mat-button-toggle value="bysearch">Search</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<br />
+<div *ngIf="searchType === 'bysearch'" class="centered">
+    Search:&nbsp;&nbsp; <input type="text" (keydown)="getSearchWord($event)" [(ngModel)]="searchKeyword" placeholder="Search item name">
+</div>
+<br /><br />
+<div class="centered" *ngIf="searchType === 'bycategory'">
+    Select Cateogry :   <select [(ngModel)]="category" (change)="getItemByCategory()">
+        <option [value]="100">All</option>
+        <option *ngFor="let item of getCategoryList" [value]="item?.value">{{item?.name}}</option>
+    </select>
+</div>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let item of itemList;index as i">
+        <div class="itemsbox" *ngIf="itemList.length>0">
+            <p>{{item?.itemId}}</p>
+            <h1>{{item?.itemname}}</h1>
+            <img [src]="item?.image" width="10px" height="20px"/>
+            <p><b>Description:</b>{{item?.description}}</p>
+            <p><b>Quantity:</b> {{item?.quantity}}</p>
+            <p><b>Price:</b> {{item?.mrpPrice | currency:'INR'}}</p>
+            <input type ="text" [id]="item?.itemId" name="addquantity" placeholder="Add-quantity"/>
+            <button (click)="addToCart(item)">Add-to-cart</button>&nbsp;
+            
+        </div>
+    </div>
+</div>
+
+<div *ngIf="itemList.length === 0" class="centered">
+    No item avaiable
+</div>
+
+<br />
+<div *ngIf="itemList.length>0" class="centered">
+    <app-paging
+        [totalitem]="totalitem"
+        [pageSize]="pageSize"
+        [offset]="offset"
+        (onNextPageClick)="onNextPageClick($event)"
+        (onPreviousPageClick)="onPreviousPageClick($event)"
+        (onFirstPageClick)="onFirstPageClick($event)"
+        (onLastPageClick)="onLastPageClick($event)"
+    ></app-paging>
+</div>
+<br />

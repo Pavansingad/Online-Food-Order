@@ -1,0 +1,110 @@
+<!-- <p>user-signup works!</p> -->
+<br /><br />
+<div class="register-tab">
+    <div class="main centered">
+        <h1>Register</h1>
+    </div>
+    <div class="main centered">
+
+        <table>
+            <tr>
+                <!-- <i class="fa fa-id-card"></i> -->
+                <td class="label">FirstName</td>
+                <td>
+                    <input type="text" [(ngModel)]="firstName">
+                </td>
+            </tr>
+            <tr>
+                <!-- <i class="fa fa-id-card-o"></i> -->
+                <td class="label">LastName</td>
+                <td>
+                    <input type="text" [(ngModel)]="lastName">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Email</td>
+                <td>
+                    <input type="text" [(ngModel)]="email">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">DOB</td>
+                <td>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date"
+                            (dateChange)="setDOB($event)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="information" style="font-size: smaller;">
+                    (Date should be in 'yyyy-mm-dd' format)
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Gender</td>
+                <td>
+                    <input type="radio" name="male" value="male" [(ngModel)]="gender"> Male
+                    <input type="radio" name="female" value="female" [(ngModel)]="gender"> female
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Address</td>
+                <td>
+                    <textarea type="text" [(ngModel)]="address"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Phone</td>
+                <td>
+                    <input type="text" [(ngModel)]="phone">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">District</td>
+                <td>
+                    <input type="text" [(ngModel)]="district">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">ZipCode</td>
+                <td>
+                    <input type="text" [(ngModel)]="zipcode">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">State</td>
+                <td>
+                    <input type="text" [(ngModel)]="state">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Password</td>
+                <td>
+                    <input type="password" [(ngModel)]="password">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="information" style="font-size: smaller;">
+                    (Password should contains 1 Uppercase, 1 Digit and should be 8 character long)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <div class="centered"> <button (click)="signup()" mat-raised-button color="primary"
+            style="background-color:rgb(16, 40, 85) ;color:rgb(249, 229, 254);">Signup</button></div>
+
+
+
+</div>
+<br /><br />

@@ -1,0 +1,43 @@
+<br /><br />
+<div class="centered">
+    Select Cateogry : <select [(ngModel)]="category" (change)="getItemByCategory()">
+        <option [value]="100">All</option>
+        <option *ngFor="let item of getCategoryList" [value]="item?.value">{{item?.name}}</option>
+    </select>
+</div>
+<br />
+<div *ngIf="itemList.length===0" class="centered">
+    No item is available in list
+</div>
+
+<div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let item of itemList;index as i">
+        <div class="itemsbox" *ngIf="itemList.length>0">
+            <p>{{item?.itemId}}</p>
+            <h1>{{item?.itemname}}</h1>
+            <img [src]="item?.image" />
+            <p><b>Description:</b>{{item?.description}}</p>
+            <p><b>Quantity:</b> {{item?.quantity}}</p>
+            <p><b>Price:</b> {{item?.mrpPrice | currency:'INR'}}</p>
+            <button (click)="editItem(item)">Edit</button>&nbsp;
+            <button (click)="delItem(item)">Delete</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br />
+<div *ngIf="itemList.length>0" class="centered">
+    <app-paging
+    [totalitem]="totalitem"
+    [pageSize]="pageSize"
+    [offset]="offset"
+    (onNextPageClick)="onNextPageClick($event)"
+    (onPreviousPageClick)="onPreviousPageClick($event)"
+    (onFirstPageClick)="onFirstPageClick($event)"
+    (onLastPageClick)="onLastPageClick($event)"
+></app-paging>
+</div>
+<br />

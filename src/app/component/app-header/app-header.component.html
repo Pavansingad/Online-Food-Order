@@ -1,0 +1,32 @@
+
+    <header class="header">
+      <a class="logo"><i class="fa fa-food"></i>🍔FOOD EXPRESS</a>
+
+      <nav class="nav-items">
+        <i class="fa fa-home"></i><a (click)="gotourl('')" [class.selected]="url === '/'">Home</a>
+        <i class="fa fa-question-circle"></i><a (click)="gotourl('aboutus')" [class.selected]="url === '/aboutus'">About-us</a>
+        <i class="fa fa-user-circle"></i><a (click)="gotourl('user-login')" [class.selected]="url === '/login'">Login</a>
+        <i class="fa fa-mobile"></i><a (click)="gotourl('contactus')" [class.selected]="url === '/contactus'">Contact-us</a>
+      </nav>
+      
+      <!-- 
+
+           <header class="header">
+        <a class="logo"><i class="fa fa-book"></i>BOOK HOUSE</a>
+        <nav class="nav-items">
+          <i class="fa fa-home"></i><a (click)="gotourl('/admin/home')" [class.selected]="url === '/admin/home'">Home</a>
+          <i class="fa fa-plus-circle"></i><a (click)="gotourl('/admin/addbook')" [class.selected]="url === '/admin/addbook'">Add-Book</a>
+          <i class="fa fa-list-ul"></i><a (click)="gotourl('/admin/booklist')" [class.selected]="url === '/admin/booklist'">Book-List</a>
+          <i class="fa fa-list-alt"></i><a (click)="gotourl('/admin/order-list')" [class.selected]="url === '/admin/order-list'">Order-List</a>
+          <i class="fa fa-sign-out"></i><a (click)="gotourl('/admin/logout')" [class.selected]="url === '/admin/logout'">Logout</a> 
+        </nav>
+      </header>
+
+      <nav class="nav-items">
+  
+        <i class="fa fa-home"></i><a (click)="gotourl('')" [class.selected]="url === '/'">Home</a>
+        <i class="fa fa-question-circle"></i><a (click)="gotourl('aboutus')" [class.selected]="url === '/aboutus'">About-us</a>
+        <i class="fa fa-user-circle"></i><a (click)="gotourl('user-login')" [class.selected]="url === '/login'">Login</a>
+        <i class="fa fa-mobile"></i><a (click)="gotourl('contactus')" [class.selected]="url === '/contactus'">Contact-us</a>
+      </nav>-->
+    </header>

@@ -1,0 +1,13 @@
+<header class="header">
+    <a class="logo"><i class="fa fa-item"></i>🍔FOODEXPRESS</a>
+    <nav class="nav-items">
+      <i class="fa fa-home"></i><a (click)="routerToLink('/user/home')" [class.selected]="url === '/user/home'">Home</a>
+      <i class="fa fa-user-circle"></i><a (click)="routerToLink('/user/cart')" [class.selected]="url === '/user/cart'">Cart List</a>
+      <i class="fa fa-user-circle"></i><a (click)="routerToLink('/user/order')" [class.selected]="url === '/user/order'">Order</a>
+      <div [matMenuTriggerFor]="menu" class="user-name-item"><div>{{userName}}&nbsp;</div><div><mat-icon>expand_more</mat-icon></div></div>   
+<mat-menu #menu="matMenu">
+    <button (click)="routerToLink('/user/logout')" mat-menu-item><mat-icon>logout</mat-icon> Logout</button>
+  </mat-menu>
+    </nav>
+  </header>
+

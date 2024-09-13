@@ -1,0 +1,27 @@
+.tbl{
+    border: solid black;
+    
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+th{
+    border: solid black;
+}
+
+.tbl th, td{
+    border: solid black;
+    padding: 20px 50px;
+}
+
+.tbl td, img{
+   
+    width: 200px;
+    height: 200px;
+}
+
+.mat-datepicker-toggle {
+    color: black;
+}

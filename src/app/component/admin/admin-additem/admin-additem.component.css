@@ -1,0 +1,19 @@
+tbody, td, tfoot, th, thead, tr {
+    background-color: aquamarine;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0px;
+}
+table tr td{
+        padding: 10px
+}
+.add-item-tab {
+    width: 40%;
+    margin: 0 auto;
+    box-shadow: rgba(11, 11, 19, 0.28) 0px 4px 7px 12px;
+    padding: 20px;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
